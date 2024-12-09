@@ -2,9 +2,12 @@ import sqlite3
 import telebot
 from telebot import types
 import pandas as pd
+from dotenv import load_dotenv
+import os
 
 # Бот токен
-bot = telebot.TeleBot('7439429538:AAHKb7bcueScuoVEJKaRJsPH94lDqx8iHwY')
+load_dotenv()
+bot = telebot.TeleBot(os.getenv('TOKEN'))
 
 # Стартовая клавиатура (Кнопка пропустить)
 start_keybrd = types.ReplyKeyboardMarkup(resize_keyboard=True)
